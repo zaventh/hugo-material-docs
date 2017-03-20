@@ -55,10 +55,10 @@
           </li>
           {{ end }}
 
-          {{ with .Site.Social.github }}
+          {{ if isset .Site.Social "github" }}
           <li>
-            <a href="https://github.com/{{ . }}" target="_blank" title="@{{ . }} on GitHub">
-              @{{ . }} on GitHub
+            <a href="{{ .Site.Params.github_base | default "https://github.com" }}/{{ .Site.Social.github }}" target="_blank" title="@{{ .Site.Social.github }} on GitHub">
+              @{{ .Site.Params.Author }} on GitHub
             </a>
           </li>
           {{ end }}
